@@ -18,4 +18,4 @@
 set -eu -o pipefail
 
 # 2023-04-21 CUDA support is handled by our unified script
-env enable_cuda=ON ./build_ascent.sh
+env enable_cuda=ON ./build_ascent_same_install.sh
