@@ -425,6 +425,7 @@ if [[ "$enable_hip" == "ON" ]]; then
 fi
 
 echo "**** Configuring Camp ${camp_version}"
+rm ${camp_build_dir}/CMakeCache.txt
 cmake -S ${camp_src_dir} -B ${camp_build_dir} ${cmake_compiler_settings} \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=${enable_verbose}\
   -DCMAKE_BUILD_TYPE=${build_config} \
@@ -480,6 +481,7 @@ if [[ "$enable_hip" == "ON" ]]; then
 fi
 
 echo "**** Configuring RAJA ${raja_version}"
+rm ${raja_build_dir}/CMakeCache.txt
 cmake -S ${raja_src_dir} -B ${raja_build_dir} ${cmake_compiler_settings} \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=${enable_verbose}\
   -DCMAKE_BUILD_TYPE=${build_config} \
@@ -539,6 +541,7 @@ if [ ! -d ${umpire_src_dir} ]; then
 fi
 
 echo "**** Configuring Umpire ${umpire_version}"
+rm ${umpire_build_dir}/CMakeCache.txt
 cmake -S ${umpire_src_dir} -B ${umpire_build_dir} ${cmake_compiler_settings} \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=${enable_verbose} \
   -DCMAKE_BUILD_TYPE=${build_config} \
@@ -587,6 +590,7 @@ fi
 
 
 echo "**** Configuring MFEM ${mfem_version}"
+rm ${mfem_build_dir}/CMakeCache.txt
 cmake -S ${mfem_src_dir} -B ${mfem_build_dir} ${cmake_compiler_settings} \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=${enable_verbose}\
   -DCMAKE_BUILD_TYPE=${build_config} \
